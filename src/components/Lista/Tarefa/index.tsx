@@ -1,9 +1,9 @@
 import style from "../Lista.module.scss"
 
-export default function Tarefa({tipo, tempo}: {tipo: string, tempo: string}) {
+export default function Tarefa({tipoTarefa, tempo}: {tipoTarefa: string, tempo: string}) {
     return (
         <li  className={style.item}>
-            <h3>{tipo}</h3>
+            <h3>{tipoTarefa}</h3>
             <span>{tempo}</span>
         </li>
     )
