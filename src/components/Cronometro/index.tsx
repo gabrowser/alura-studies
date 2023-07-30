@@ -1,6 +1,7 @@
 import Button from "../Button";
 import Relogio from "./Relogio";
 import style from "./Cronometro.module.scss";
+import { timeToSeconds } from "../../common/utils/date";
 
 export default function Cronometro() {
     return (
