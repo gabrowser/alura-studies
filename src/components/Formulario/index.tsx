@@ -2,6 +2,7 @@ import React from "react";
 import Button from "../Button";
 import style from "./Form.module.scss";
 import { ITarefa } from "../../types/tarefa";
+import {v4 as uuidv4} from 'uuid';
 
 class Form extends React.Component<{setTarefas: React.Dispatch<React.SetStateAction<ITarefa[]>>}> {
     state = {
@@ -12,7 +13,9 @@ class Form extends React.Component<{setTarefas: React.Dispatch<React.SetStateAct
     /* A forma abaixo de tipar um elemento é a forma mais específica que tem */
     adicionarTarefa(evento: React.FormEvent<HTMLFormElement>) {
         evento.preventDefault();
-        this.props.setTarefas(tarefasAntigas => [...tarefasAntigas, {...this.state}])
+        this.props.setTarefas(tarefasAntigas => [...tarefasAntigas,
+            {...this.state, selected: false, completed: false, id: uuidv4()}])
+        this.setState({tipoTarefa:"", tempo: ""})
     }
 
     render() {
