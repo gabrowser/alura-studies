@@ -8,7 +8,7 @@ interface Props extends ITarefa {
 export default function Tarefa({ tipoTarefa, tempo, selected, completed, id, selecionaTarefa }: Props) {
     return (
         <li
-            className={style.item}
+            className={`${style.item} ${selected ? style.itemSelecionado : ''}`}
             onClick={() => selecionaTarefa({
                 tipoTarefa,
                 tempo,
